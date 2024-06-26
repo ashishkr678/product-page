@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="product-detail-page">
+        <nav aria-label="Breadcrumb">
+            <ol role="list" class="breadcrumb">
+                <li>
+                    <div>
+                       <a href="#" class="breadcrumb-link">Men \ </a>
+                       
+                    </div>
+                </li>
+                <li>
+                    <div>
+                       <a href="#" class="breadcrumb-link">Clothing \ </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" aria-current="page" class="breadcrumb-current">Basic Tee 6-Pack</a>
+                </li>
+            </ol>
+        </nav>
+        <section class="product-section">
+            <!-- Image gallery -->
+            <div class="image-gallery">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Two each of gray, white, and black shirts laying flat." class="main-image">
+                <div class="thumbnail-gallery">
+                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Two each of gray, white, and black shirts laying flat." class="thumbnail">
+                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg" alt="Model wearing plain black basic tee." class="thumbnail">
+                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg" alt="Model wearing plain gray basic tee." class="thumbnail">
+                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg" alt="Model wearing plain white basic tee." class="thumbnail">
+                </div>
+            </div>
+
+            <!-- Product info -->
+            <div class="product-info">
+                <h1 class="product-brand">Universaloutfit</h1>
+                <h2 class="product-name">Basic Tee 6-Pack</h2>
+                <div class="price">
+                    <span class="current-price">₹199</span>
+                    <span class="original-price">₹211</span>
+                    <span class="discount">5% Off</span>
+                </div>
+                <div class="reviews">
+                    <div class="rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <span class="ratings">43535 Ratings</span>
+                    <a href="#" class="review-link">4323 Reviews</a>
+                </div>
+                <div>
+                    <h4>Select Size</h4>
+                </div>
+                <div class="size-options">
+                        <div class="size-option" onclick="selectSize(this)">S</div>
+                        <div class="size-option" onclick="selectSize(this)">M</div>
+                        <div class="size-option" onclick="selectSize(this)">L</div>
+                </div>
+                <a href="#" class="add-to-cart-btn" onclick="showToast()">ADD TO CART</a>
+                <div>
+                    <div class="description">                        
+                        <p>The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.</p>
+                    </div>
+
+                    <div class="highlights">
+                        <h3>Highlights</h3>
+
+                        <div>
+                            <ul role="list">
+                                <li><span>Hand cut and sewn locally</span></li>
+                                <li><span>Dyed with our proprietary colors</span></li>
+                                <li><span>Pre-washed & pre-shrunk</span></li>
+                                <li><span>Ultra-soft 100% cotton</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="details">
+                        <h3>Details</h3>
+                        <div>
+                            <p>The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <h2>Customer Reviews</h2>
+            <div class="rating-bar-container">
+                <div class="rating-bar">
+                    <div class="rating-bar-filled" style="width: 80%;"></div>
+                </div>
+                <span class="rating-count">4.0 out of 5</span>
+            </div>
+            <div class="review">
+                <div class="review-avatar"></div>
+                <div class="review-content">
+                    <div class="review-author">Ashish Kumar</div>
+                    <div class="review-date">June 24, 2024</div>
+                    <div class="review-text">Great product! The quality is top-notch and the fit is perfect. Highly recommend.</div>
+                </div>
+            </div>
+            <div class="review">
+                <div class="review-avatar"></div>
+                <div class="review-content">
+                    <div class="review-author">Saurav Sharma</div>
+                    <div class="review-date">June 23, 2024</div>
+                    <div class="review-text">I love these tees! They're so comfortable and versatile. I wear them all the time.</div>
+                </div>
+            </div>
+            <div class="review">
+                <div class="review-avatar"></div>
+                <div class="review-content">
+                    <div class="review-author">Shreya Kumari</div>
+                    <div class="review-date">June 22, 2024</div>
+                    <div class="review-text">Good value for the price. The fabric is soft and the colors are as shown in the pictures.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="toast" class="toast">Item added to cart!</div>
+
+    <!-- Scripts -->
+    <script>
+        function showToast() {
+            var toast = document.getElementById("toast");
+            toast.className = "toast show";
+            setTimeout(function() {
+                toast.className = toast.className.replace("show", "");
+            }, 3000);
+        }
+
+        function selectSize(element) {
+            var sizes = document.querySelectorAll('.size-option');
+            sizes.forEach(function(size) {
+                size.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+    </script>
+</body>
+</html>
